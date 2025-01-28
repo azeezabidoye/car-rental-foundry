@@ -22,4 +22,7 @@ contract CarRental {
         uint start;
         uint end;
     }
+
+    // Mapping Wallet addresses to Renters
+    mapping(address => Renter) public renters;
 }
