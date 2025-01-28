@@ -50,4 +50,11 @@ contract CarRental {
             end
         );
     }
+
+    // Check out car
+    function checkOut(address payable walletAddress) public {
+        renters[walletAddress].isActive = false;
+        renters[walletAddress].canRent = true;
+        renters[walletAddress].start = block.timestamp;
+    }
 }
