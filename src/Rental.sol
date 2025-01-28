@@ -57,4 +57,13 @@ contract CarRental {
         renters[walletAddress].canRent = true;
         renters[walletAddress].start = block.timestamp;
     }
+
+    // Check in car
+    function checkIn(address payable walletAddress) public {
+        renters[walletAddress].isActive = true;
+        renters[walletAddress].canRent = false;
+        renters[walletAddress].start = block.timestamp;
+
+        // TO DO: Add Due Amount
+    }
 }
