@@ -9,4 +9,17 @@ contract CarRental {
     constructor() {
         owner = msg.sender;
     }
+
+    // Add yourself as a Renter
+    struct Renter {
+        address payable walletAddress;
+        string firstname;
+        string lastname;
+        bool canRent;
+        bool isActive;
+        uint balance;
+        uint due;
+        uint start;
+        uint end;
+    }
 }
