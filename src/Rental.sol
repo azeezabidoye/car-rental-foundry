@@ -64,7 +64,8 @@ contract CarRental {
         renters[walletAddress].canRent = false;
         renters[walletAddress].start = block.timestamp;
 
-        // TO DO: Add Due Amount
+        // Set Due Amount
+        setAmountDue(walletAddress);
     }
 
     // Function to calculate Timespan
@@ -94,5 +95,12 @@ contract CarRental {
         address payable walletAddress
     ) public view returns (uint) {
         return renters[walletAddress].balance;
+    }
+
+    // Set Due amount
+    function setAmountDue(address payable walletAddress) internal {
+        uint timespanMinutes = getTotalDuration(walletAddress);
+        uint fiveMinuteIncrement = timespanMinutes / 5;
+        renters[walletAddress].due = fiveMinuteIncrement * 50000000000000000;
     }
 }
