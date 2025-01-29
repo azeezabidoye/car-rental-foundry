@@ -88,4 +88,11 @@ contract CarRental {
     function balanceOf() public view returns (uint) {
         return address(this).balance;
     }
+
+    // Get Renter's balance
+    function getRenterBalance(
+        address payable walletAddress
+    ) public view returns (uint) {
+        return renters[walletAddress].balance;
+    }
 }
