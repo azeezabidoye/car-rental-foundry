@@ -83,4 +83,9 @@ contract CarRental {
         uint timespanToMimutes = timeDuration / 60;
         return timespanToMimutes;
     }
+
+    // Get contract balance
+    function balanceOf() public view returns (uint) {
+        return address(this).balance;
+    }
 }
