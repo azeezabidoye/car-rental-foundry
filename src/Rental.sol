@@ -71,4 +71,16 @@ contract CarRental {
     function renterTimespan(uint end, uint start) internal pure returns (uint) {
         return end - start;
     }
+
+    // Get total duration of rent time
+    function getTotalDuration(
+        address payable walletAddress
+    ) public view returns (uint) {
+        uint timeDuration = renterTimespan(
+            renters[walletAddress].end,
+            renters[walletAddress].start
+        );
+        uint timespanToMimutes = timeDuration / 60;
+        return timespanToMimutes;
+    }
 }
