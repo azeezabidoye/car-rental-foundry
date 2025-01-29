@@ -103,4 +103,11 @@ contract CarRental {
         uint fiveMinuteIncrement = timespanMinutes / 5;
         renters[walletAddress].due = fiveMinuteIncrement * 50000000000000000;
     }
+
+    // Reset Rental Option
+    function canRentBike(
+        address payable walletAddress
+    ) public view returns (bool) {
+        return renters[walletAddress].canRent;
+    }
 }
