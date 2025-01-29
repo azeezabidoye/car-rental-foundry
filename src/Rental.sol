@@ -66,4 +66,9 @@ contract CarRental {
 
         // TO DO: Add Due Amount
     }
+
+    // Function to calculate Timespan
+    function renterTimespan(uint end, uint start) internal pure returns (uint) {
+        return end - start;
+    }
 }
