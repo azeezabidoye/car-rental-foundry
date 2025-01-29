@@ -105,7 +105,7 @@ contract CarRental {
     }
 
     // Reset Rental Option
-    function canRentBike(
+    function canRentCar(
         address payable walletAddress
     ) public view returns (bool) {
         return renters[walletAddress].canRent;
