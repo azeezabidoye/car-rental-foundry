@@ -97,7 +97,7 @@ contract CarRental {
         return renters[walletAddress].balance;
     }
 
-    // Set Due amount
+    // Set Due Amount
     function setAmountDue(address payable walletAddress) internal {
         uint timespanMinutes = getTotalDuration(walletAddress);
         uint fiveMinuteIncrement = timespanMinutes / 5;
