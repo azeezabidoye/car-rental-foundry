@@ -62,7 +62,7 @@ contract CarRental {
     function checkIn(address payable walletAddress) public {
         renters[walletAddress].isActive = false;
         renters[walletAddress].canRent = true;
-        renters[walletAddress].start = block.timestamp;
+        renters[walletAddress].end = block.timestamp;
 
         // Set Due Amount
         setAmountDue(walletAddress);
