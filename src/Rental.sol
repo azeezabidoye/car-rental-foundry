@@ -81,7 +81,7 @@ contract CarRental {
             renters[walletAddress].end,
             renters[walletAddress].start
         );
-        uint timespanToMimutes = timeDuration / 60;
+        uint timespanToMimutes = timeDuration / 6000;
         return timespanToMimutes;
     }
 
